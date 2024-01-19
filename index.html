@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
-    
-
+  </head>
+  <body>
+    <div class="container">
+      <div class="toDo">
+        <h2>To Do</h2>
+        <div class="task" id="toDoTask"></div>
+        <div class="options">
+            <input type="text" id="input" placeholder="Create a task">
+            <select id="select">
+                <option value="high">High priority</option>
+                <option value="medium">Medium priority</option>
+                <option value="low">Low priority</option>
+            </select>
+        </div>
+        <div class="buttons">
+        <button type="submit" class="submit">submit</button>
+        <button class="delete">delete</button>
+    </div>
+      </div>
+      <div class="progress">
+        <h2>Progress</h2>
+        <div class="task" id="progressTask"></div>
+      </div>
+      <div class="done">
+        <h2>Done</h2>
+        <div class="task" id="doneTask"></div>
+      </div>
+    </div>
 
     <script type="module" src="main.js"></script>
-</body>
+  </body>
 </html>
