@@ -67,3 +67,21 @@ button{
 .delete{
     margin-left: 10px;
 }
+.high{
+    background-color: red;
+}
+.medium{
+    background-color: orange;
+}
+.low{
+    background-color: green;
+}
+.paraf{
+    border: 1px solid white;
+}
+.paraf:hover{
+    cursor: pointer;
+}
+.selectedp{
+    border: 3px solid black;
+}
