@@ -8,9 +8,8 @@ const controller=(view,model)=>{
     function Submit(){
         let object=model.addTask();
         view.addTaskToView(object);
-        document.querySelectorAll(view.getDomElement().paraf).forEach(e=>{
-            e.addEventListener(`click`,selectTask);
-        })
+        dragAndDrop();
+
     }
 
     function selectTask(){
@@ -23,7 +22,51 @@ const controller=(view,model)=>{
     }
 
     function DeleteTask(){
-        
+        if(document.querySelector(`.selectedp`)){
+            document.querySelector(`.selectedp`).remove()
+        }else{
+            alert(`Select task!`)
+        }
+    }
+
+    function dragAndDrop(){
+
+        let toDo=document.querySelector(view.getDomElement().toDoTask);
+        let progress=document.querySelector(view.getDomElement().progressTask);
+        let done=document.querySelector(view.getDomElement().doneTask);
+        let task=document.querySelectorAll(view.getDomElement().task);
+        document.querySelectorAll(view.getDomElement().paraf).forEach(e=>{
+            e.addEventListener(`click`,selectTask);
+            e.addEventListener(`dragstart`,(e)=>{
+                let selected=e.target;
+                task.forEach(e=>{
+                    e.addEventListener(`dragover`,(e)=>{
+                        e.preventDefault();
+                    })
+                });
+                progress.addEventListener(`drop`,(e)=>{
+                    if(selected!=null){
+                        e.preventDefault();
+                        progress.appendChild(selected);
+                        selected=null;
+                    }
+                });
+                done.addEventListener(`drop`,(e)=>{
+                    if(selected!=null){
+                        e.preventDefault();
+                        done.appendChild(selected);
+                        selected=null;
+                    }
+                });
+                toDo.addEventListener(`drop`,(e)=>{
+                    if(selected!=null){
+                        e.preventDefault();
+                        toDo.appendChild(selected);
+                        selected=null;
+                    }
+                })
+            });
+        });
     }
 
 

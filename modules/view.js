@@ -1,5 +1,6 @@
 const view=(()=>{
    let domElements={
+        task:`.task`,
         toDoTask:`#toDoTask`,
         progressTask:`#progressTask`,
         doneTask:`#doneTask`,
@@ -26,7 +27,7 @@ const view=(()=>{
         addTaskToView:(object)=>{
             let toDo=document.querySelector(domElements.toDoTask);
             let html=`
-            <p data-id="${object.id}" class="${object.priority} paraf">${object.value}</p>
+            <p data-id="${object.id}" class="${object.priority} paraf" draggable="true">${object.value}</p>
             `;
             toDo.innerHTML+=html;
         },
