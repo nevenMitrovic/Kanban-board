@@ -1,7 +1,8 @@
 const controller=(view,model)=>{
     let setUpListeners=()=>{
         document.querySelector(view.getDomElement().submit).addEventListener(`click`,Submit);
-        document.querySelector(view.getDomElement().delete).addEventListener(`click`,DeleteTask)
+        document.querySelector(view.getDomElement().delete).addEventListener(`click`,DeleteTask);
+        document.querySelector(view.getDomElement().change).addEventListener(`click`,Change);
     }
     
     
@@ -67,6 +68,15 @@ const controller=(view,model)=>{
                 })
             });
         });
+    };
+    function Change(){
+        let task=document.querySelector(`.selectedp`);
+        if(task){
+            let change=prompt(`Izmenite task`);
+            task.textContent=change;
+        }else{
+            alert(`Selektujte task koji zelite da izmenite!`)
+        }
     }
 
 

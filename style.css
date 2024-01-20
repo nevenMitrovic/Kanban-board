@@ -65,7 +65,7 @@ button{
     display: flex;
 }
 .delete{
-    margin-left: 10px;
+    margin: 0 10px;
 }
 .high{
     background-color: red;

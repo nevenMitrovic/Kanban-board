@@ -8,7 +8,8 @@ const view=(()=>{
         select:`#select`,
         submit:`.submit`,
         delete:`.delete`,
-        paraf:`.paraf`
+        paraf:`.paraf`,
+        change:`.change`
     }
 
 
