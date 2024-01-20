@@ -79,10 +79,6 @@ const controller=(view,model)=>{
         }
     }
 
-
-
-
-
     return {
         init:()=>{
             setUpListeners()

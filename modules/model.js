@@ -2,9 +2,7 @@ import view from "./view.js";
 
 const model=(()=>{
     let data={
-        toDo:[],
-        progress:[],
-        done:[]
+        objects:[]
     }
 
 
@@ -19,13 +17,13 @@ const model=(()=>{
             let id;
             let value=view.getValue.taskValue();
             let priority=view.getValue.priorityValue();
-            if(data.toDo.length==0){
+            if(data.objects.length==0){
                 id=1;
             }else{
-                id=data.toDo.length+1;
+                id=data.objects.length+1;
             }
             let obj=new Task(value,priority,id);
-            data.toDo.push(obj);
+            data.objects.push(obj);
             return obj;
         }
     }

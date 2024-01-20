@@ -31,7 +31,8 @@ const view=(()=>{
             <p data-id="${object.id}" class="${object.priority} paraf" draggable="true">${object.value}</p>
             `;
             toDo.innerHTML+=html;
-        },
+        }
+
 
 
 
